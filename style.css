@@ -1,0 +1,57 @@
+:root {
+    --white-color: #ffffff;
+}
+
+body{
+    background: #C6C5B9;
+    margin-top: 100px;
+}
+
+.gridContainer{
+    margin: auto;
+    background: #C6C5B9;
+    width: 35%;
+    display: grid;
+    grid-template-columns: auto auto auto auto
+}
+
+.grid_item{
+    background: #546A7B;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #85C7F2;
+    color: var(--white-color);
+    border-radius: 15px;
+
+}
+
+.gridItemResult {
+    grid-column: span 4; /* Questo unisce le prime 4 colonne */
+    background: #393D3F;
+    color: var(--white-color);
+}
+
+.egualButton{
+    color: rgb(185, 125, 14);
+    font-size: -webkit-xxx-large;
+    font-weight: bold;
+}
+
+.special-character {
+    background: #ff8d21;
+    color: black;
+}
+
+
+
+@media only screen and (max-width: 750px) {
+    .gridContainer {
+        width: 90%; /* Aumenta la larghezza del contenitore della griglia */
+    }
+
+    .grid_item {
+        height: 100px; /* Puoi anche aumentare l'altezza se necessario */
+    }
+}

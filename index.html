@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <div class="gridContainer">
+        <div class="grid_item gridItemResult" id="schermo"> </div>
+        <div class="special-character grid_item" value="+" onclick="pressButton(event)">+</div>
+        <div class="special-character grid_item" value="-" onclick="pressButton(event)">-</div>
+        <div class="special-character grid_item" value="x" onclick="pressButton(event)">x</div>
+        <div class="special-character grid_item" value="%" onclick="pressButton(event)">%</div>
+        <div class="grid_item" value="7" onclick="pressButton(event)">7</div>
+        <div class="grid_item" value="8" onclick="pressButton(event)">8</div>
+        <div class="grid_item" value="9" onclick="pressButton(event)">9</div>
+        <div class="grid_item" value="undo" onclick="pressButton(event)"> BACK</div>
+        <div class="grid_item" value="4" onclick="pressButton(event)">4</div>
+        <div class="grid_item" value="5" onclick="pressButton(event)">5</div>
+        <div class="grid_item" value="6" onclick="pressButton(event)">6</div>
+        <div class="grid_item egualButton" value="=" onclick="pressButton(event)" style="background: #85C7F2; border-radius: 5px"></div>
+        <div class="grid_item" value="1" onclick="pressButton(event)">1</div>
+        <div class="grid_item" value="2" onclick="pressButton(event)">2</div>
+        <div class="grid_item" value="3" onclick="pressButton(event)">3</div>
+        <div class="grid_item egualButton" value="=" onclick="pressButton(event)" style="background: #85C7F2; border-radius: 0px">=</div>
+        <div class="grid_item" value="0" onclick="pressButton(event)">0</div>
+        <div class="special-character grid_item" value="." onclick="pressButton(event)">,</div>
+        <div class="special-character grid_item" value="CE" onclick="pressButton(event)">CE   </div>
+        <div class="grid_item egualButton"  value="=" onclick="pressButton(event)" style="background: #85C7F2; border-radius: 0px"> </div>
+    </div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
