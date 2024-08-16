@@ -1,57 +1,114 @@
 :root {
     --white-color: #ffffff;
+    --bg-color: #000000;  /* Sfondo completamente nero */
+    --button-bg: #333333;
+    --button-bg-special: #fb9c0a;
+    --button-bg-equal: #34c759;
+    --button-text-color: #ffffff;
+    --button-text-special-color: #ffffff;
+    --screen-bg: #1c1c1e; /* Sfondo più scuro per lo schermo */
+    --screen-text-color: #ffffff;
 }
 
-body{
-    background: #C6C5B9;
-    margin-top: 100px;
-}
-
-.gridContainer{
-    margin: auto;
-    background: #C6C5B9;
-    width: 35%;
-    display: grid;
-    grid-template-columns: auto auto auto auto
-}
-
-.grid_item{
-    background: #546A7B;
-    height: 90px;
+body {
+    background: var(--bg-color);
+    margin: 0; /* Nessun margine */
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #85C7F2;
-    color: var(--white-color);
-    border-radius: 15px;
+    height: 100vh;
+    padding-top: 20px; /* Aggiunto padding per centrare verticalmente */
+    padding-bottom: 20px; /* Aggiunto padding per centrare verticalmente */
+}
 
+.gridContainer {
+    background: var(--bg-color);
+    width: 100%;
+    max-width: 400px; /* Limite massimo della larghezza */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px; /* Aumentato leggermente lo spazio tra i pulsanti */
+    padding: 15px; /* Aumentato il padding */
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.grid_item {
+    background: var(--button-bg);
+    height: 75px; /* Altezza ridotta per mantenere proporzioni */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Arrotondati i pulsanti */
+    color: var(--button-text-color);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, transform 0.1s;
+    font-size: xx-large;
+}
+
+.grid_item:active {
+    transform: scale(0.95);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .gridItemResult {
-    grid-column: span 4; /* Questo unisce le prime 4 colonne */
-    background: #393D3F;
-    color: var(--white-color);
+    grid-column: span 4;
+    background: var(--screen-bg);
+    color: var(--screen-text-color);
+    height: 90px; /* Altezza ridotta per schermo */
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: 2.4em;
+    padding-right: 15px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-.egualButton{
-    color: rgb(185, 125, 14);
-    font-size: -webkit-xxx-large;
-    font-weight: bold;
+/* Mantenere i pulsanti 0 e = meno arrotondati */
+.grid_item[value="0"] {
+    border-radius: 20px;
 }
 
+#schermo{
+background: black;
+}
+
+.egualButton {
+    background: var(--button-bg-equal);
+    color: var(--button-text-special-color);
+    font-size: 2em;
+   /* Arrotondamento più contenuto per il pulsante = */
+}
+
+
+.greyBackground{
+    background: #696969 !important;
+}
 .special-character {
-    background: #ff8d21;
-    color: black;
+    background: var(--button-bg-special);
+    color: var(--button-text-special-color);
 }
-
-
 
 @media only screen and (max-width: 750px) {
+    body {
+        height: 100%; /* Assicurarsi che l'altezza del body occupi tutto lo schermo */
+    }
+    
     .gridContainer {
-        width: 90%; /* Aumenta la larghezza del contenitore della griglia */
+        width: 100%;
+        padding: 10px; /* Aumentato leggermente il padding */
     }
 
     .grid_item {
-        height: 100px; /* Puoi anche aumentare l'altezza se necessario */
+        height: 80px; /* Altezza ridotta per adattarsi meglio allo schermo */
+        font-size: 1.5em;
+    }
+
+    .gridItemResult {
+        height: 100px; /* Altezza ridotta per schermo su mobile */
+        font-size: 2.5em;
     }
 }

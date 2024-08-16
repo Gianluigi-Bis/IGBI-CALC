@@ -36,6 +36,11 @@ document.addEventListener('keydown', function(event) {
 
 
 function pressButton(e){
+
+    if (navigator.vibrate) {
+        navigator.vibrate(50);
+    }
+
     let eventoScatenante = e?.target;
     let valore = eventoScatenante.getAttribute("value");   
     let isLastNumberSpecialCharacter = false; 
