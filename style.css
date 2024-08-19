@@ -10,6 +10,42 @@
     --screen-text-color: #ffffff;
 }
 
+
+:root.light-theme {
+    --bg-color: #f0f0f0;
+    --button-bg: #ffffff;
+    --button-bg-special: #f39c12;
+    --button-bg-equal: #2ecc71;
+    --button-text-color: #000000;
+    --button-text-special-color: #ffffff;
+    --screen-bg: #ffffff;
+    --screen-text-color: white;
+}
+
+
+:root.dark-theme {
+    --bg-color: #000000;
+    --button-bg: #333333;
+    --button-bg-special: #fb9c0a;
+    --button-bg-equal: #34c759;
+    --button-text-color: #ffffff;
+    --button-text-special-color: #ffffff;
+    --screen-bg: #1c1c1e;
+    --screen-text-color: #ffffff;
+}
+
+:root.colorful-theme {
+    --bg-color: #282c34;
+    --button-bg: #1f6173;
+    --button-bg-special: #e91e63;
+    --button-bg-equal: #8e44ad;
+    --button-text-color: #ffffff;
+    --button-text-special-color: #ffffff;
+    --screen-bg: #20232a;
+    --screen-text-color: #61dafb;
+}
+
+
 body {
     background: var(--bg-color);
     margin: 0; /* Nessun margine */
@@ -57,7 +93,7 @@ body {
     grid-column: span 4;
     background: var(--screen-bg);
     color: var(--screen-text-color);
-    height: 90px; /* Altezza ridotta per schermo */
+    height: 90px;
     display: flex;
     justify-content: right;
     align-items: center;
@@ -65,7 +101,28 @@ body {
     padding-right: 15px;
     border-radius: 20px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    overflow-x: auto; /* Abilita lo scroll orizzontale */
+    white-space: nowrap;
+    cursor: text; /* Cambia il cursore per indicare che l'area è interattiva */
 }
+
+.gridItemResult::-webkit-scrollbar {
+    height: 8px; /* Altezza della scrollbar orizzontale */
+}
+
+.gridItemResult::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.gridItemResult::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.gridItemResult:hover {
+    overflow-x: scroll; /* Permette lo scroll al passaggio del mouse */
+}
+
 
 /* Mantenere i pulsanti 0 e = meno arrotondati */
 .grid_item[value="0"] {
@@ -86,11 +143,57 @@ background: black;
 
 .greyBackground{
     background: #696969 !important;
+    color: black !important;
 }
 .special-character {
     background: var(--button-bg-special);
     color: var(--button-text-special-color);
 }
+
+/*inizio popup*/
+.theme-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+    color: white;
+}
+
+#theme-popup {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    background: var(--screen-bg);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+#theme-popup button {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: var(--button-bg);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Optional: Personalizza l'icona all'interno del pulsante */
+.special-character[onclick="toggleThemePopup()"] {
+    font-size: 1.5em; /* Modifica la dimensione dell'icona per adattarsi meglio al pulsante */
+    line-height: 1;   /* Allinea verticalmente l'icona */
+}
+/*Fine popup*/
+
+
 
 @media only screen and (max-width: 750px) {
     body {
@@ -112,3 +215,8 @@ background: black;
         font-size: 2.5em;
     }
 }
+
+
+
+
+

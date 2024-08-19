@@ -10,10 +10,18 @@
 </head>
 <body>
 
+<!--possibilità di cambiare tema-->
+    <div id="theme-popup" class="hidden">
+        <button onclick="changeTheme('light-theme')">Chiaro</button>
+        <button onclick="changeTheme('dark-theme')">Scuro</button>
+        <button onclick="changeTheme('colorful-theme')">Colorato</button>
+    </div>
+
     <div class="gridContainer">
         <div class="grid_item gridItemResult" id="schermo">0</div>
         <div class="greyBackground special-character grid_item" value="CE" onclick="pressButton(event)">AC</div>
-        <div class="greyBackground special-character grid_item" value="%" onclick="pressButton(event)">%</div>
+        <!-- <div class="greyBackground special-character grid_item" value="%" onclick="pressButton(event)">%</div> -->
+        <div class="greyBackground special-character grid_item" onclick="toggleThemePopup()">⚙️</div>
         <div class="greyBackground special-character grid_item" value="undo" onclick="pressButton(event)">BACK</div>
         <div class="special-character grid_item" value="/" onclick="pressButton(event)">÷</div>
 
